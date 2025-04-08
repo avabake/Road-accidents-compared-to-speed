@@ -26,7 +26,7 @@ Sorting by date to identify any entries incorrectly listed as coming into effect
 
 
 #### Crashes and the amount of Fatal crashes the happened for each speed limit
-'''
+```sql
 WITH crash_buckets AS (
     SELECT
         CASE
@@ -61,10 +61,10 @@ ORDER BY
         WHEN speed_bucket = '100–110 km/h' THEN 6
         ELSE 7
     END;
-'''
+```
 
 #### Comparing minor crashes and major crashes that happened in each speed limit.
-'''
+```sql
 WITH crash_buckets AS (
     SELECT
         CASE
@@ -105,11 +105,11 @@ ORDER BY
         WHEN speed_bucket = '80–90 km/h' THEN 5
         WHEN speed_bucket = '100–110 km/h' THEN 6
     END;
-'''
+```
 
 #### The crashes that happened at each speed limit and the amount of people and vehicles involved in those crashes.
 
-'''
+```sql
 WITH crash_buckets AS (
     SELECT
         CASE
@@ -163,10 +163,10 @@ ORDER BY
         WHEN speed_bucket = '80–90 km/h' THEN 5
         WHEN speed_bucket = '100–110 km/h' THEN 6
     END;
-'''
+```
 #### The average speed limit of the country in each year.
 
-'''
+```sql
 ----- all data put into years for the average speed of the whole country
 WITH active_limits AS (
     SELECT
@@ -192,11 +192,11 @@ FROM yearly_limits
 WHERE year BETWEEN 2005 AND 2025
 GROUP BY year
 ORDER BY year;
-'''
+```
 
 #### The amount of crashes in each year.
 
-'''
+```sql
 
 SELECT
     crashyear,
@@ -234,7 +234,7 @@ GROUP BY
     crashyear
 ORDER BY
     crashyear;
-'''
+```
 
 
 ## Case studies. 
